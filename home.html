@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="https://kit.fontawesome.com/c9c75f8602.js" crossorigin="anonymous"></script>
+        <script src="functions.js"></script>
+    </head>
+    <div class="topnav">
+        <a class="homelink" href="home.html">
+            <img src = "assets/Screenshot 2024-04-03 at 12.19.07 PM.png" alt = "Home">
+        </a>
+        <div class = "left-container">
+            <a href="shop.html" class=" login-link"><i class="fas fa-shopping-cart"></i> </a>
+            <a href="login.html" class="login-link">Login</a>
+        </div>
+      </div>
+    <body>
+    <br/> 
+    <div>
+        <h1> Welcome to the KEA Storefront!
+        </h1>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="assets/chair.avif" alt="Item 1">
+            <<div class="caption">
+                <div>CHAIR</div>
+                <br/>
+                <div>$20<button class="info-button" onclick="openPopup('More info for chair, this is really great quality woohoo')">More Info</button></div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="assets/plant.jpeg" alt="Item 2">
+            <div class="caption">
+                <div>PLANT</div>
+                <br/>
+                <div>$20
+                    <button class="info-button" onclick="openPopup('More info for plant, its fake so it wont die ')">More Info</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="assets/bookshelf.jpeg" alt="Item 2">
+            <div class="caption">
+                <div>BOOKSHELF</div>
+                <br/>
+                <div>$20<button class="info-button" onclick="openPopup('More info for bookshelf, very sturdy and looks great in any study')">More Info</button></div>
+            </div>
+        </div>
+
+        <div id="cart" class="grid-container"></div>
+        <!-- pop up -->
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="popup-text"></div>
+            <button class="add-to-cart-button" onclick="addToCart('CHAIR', 20, 'chair.avif')">Add Chair to Cart</button>
+
+        </div>
+    </div>
+    <script>
+        // Update cart on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            updateCart(); // Call updateCart after DOM content is loaded
+        });
+    </script>
+    </body>
+</html>
