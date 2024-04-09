@@ -1,10 +1,15 @@
-function openPopup(info) {
-    document.getElementById("popup-text").innerText = info;
-    document.getElementById("popup").style.display = "block";
-}
+// function openPopup(info) {
+//     document.getElementById("popup-text").innerText = info;
+//     document.getElementById("popup").style.display = "block";
+// }
 
 function closePopup() {
     document.getElementById("popup").style.display = "none";
+}
+function openPopup(info, addToCartFunction) {
+    document.getElementById("popup-text").innerText = info;
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("add-to-cart-button").onclick = addToCartFunction;
 }
 
 
@@ -31,36 +36,42 @@ function addToCart(itemName, itemPrice, itemImage) {
 
 
 function updateCart() {
-
     let cartElement = document.getElementById('cart');
+    let totalPrice = 0;
+
     if (cartElement && window.location.pathname.endsWith('shop.html')) {
+        cartElement.innerHTML = '';
 
-    cartElement.innerHTML = '';
+        let itemsToShow = cart.filter(item => item.quantity > 0);
 
-    //have to be greater than 0 
-    let itemsToShow = cart.filter(item => item.quantity > 0);
-
- 
-    itemsToShow.forEach(item => {
-        let itemElement = document.createElement('div');
-        itemElement.classList.add('grid-item', 'cart-item');
-        itemElement.innerHTML = `
-            <img src="assets/${item.image}" alt="${item.name}">
-            <div class="caption">
-                <div>${item.name}</div>
-                <br/>
-                <div>$${item.price}</div>
-                <div class="quantity-controls">
-                    <button onclick="decreaseQuantity(${item.id})">-</button>
-                    <div class="quantity"><input type="text" value="${item.quantity}" readonly></div>
-                    <button onclick="increaseQuantity(${item.id})">+</button>
+        itemsToShow.forEach(item => {
+            let itemElement = document.createElement('div');
+            itemElement.classList.add('grid-item', 'cart-item');
+            itemElement.innerHTML = `
+                <img src="assets/${item.image}" alt="${item.name}">
+                <div class="caption">
+                    <div>${item.name}</div>
+                    <br/>
+                    <div>$${item.price}</div>
+                    <div class="quantity-controls">
+                        <button onclick="decreaseQuantity(${item.id})">-</button>
+                        <div class="quantity"><input type="text" value="${item.quantity}" readonly></div>
+                        <button onclick="increaseQuantity(${item.id})">+</button>
+                    </div>
                 </div>
-            </div>
-        `;
-        cartElement.appendChild(itemElement);
-    });
+            `;
+            cartElement.appendChild(itemElement);
+            totalPrice += item.price * item.quantity; // Calculate total price
+        });
+
+        // Update the HTML element displaying the total price
+        let totalPriceElement = document.querySelector('.shop-container-right p');
+        if (totalPriceElement) {
+            totalPriceElement.textContent = `Total: $${totalPrice}`;
+        }
+    }
 }
-}
+
 
 
 
@@ -85,5 +96,17 @@ function increaseQuantity(itemId) {
         cart[itemIndex].quantity++;
         updateCart(); // Update the cart display
         sessionStorage.setItem('cart', JSON.stringify(cart));
+    }
+}
+function toggleLoginType(type) {
+    const memberBtn = document.getElementById('member-login-btn');
+    const businessBtn = document.getElementById('business-login-btn');
+
+    if (type === 'member') {
+        memberBtn.classList.add('active');
+        businessBtn.classList.remove('active');
+    } else if (type === 'business') {
+        memberBtn.classList.remove('active');
+        businessBtn.classList.add('active');
     }
 }

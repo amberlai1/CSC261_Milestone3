@@ -26,7 +26,7 @@
             <<div class="caption">
                 <div>CHAIR</div>
                 <br/>
-                <div>$20<button class="info-button" onclick="openPopup('More info for chair, this is really great quality woohoo')">More Info</button></div>
+                <div>$20<button class="info-button" onclick="openPopup('More info for chair, this is really great quality', function() { addToCart('CHAIR', 20, 'chair.avif'); })">More Info</button></div>
             </div>
         </div>
         <div class="grid-item">
@@ -34,9 +34,7 @@
             <div class="caption">
                 <div>PLANT</div>
                 <br/>
-                <div>$20
-                    <button class="info-button" onclick="openPopup('More info for plant, its fake so it wont die ')">More Info</button>
-                </div>
+                    <div>$20<button class="info-button" onclick="openPopup('More info for plant, this is really great quality', function() { addToCart('PLANT', 20, 'plant.jpeg'); })">More Info</button></div>
             </div>
         </div>
         <div class="grid-item">
@@ -44,7 +42,7 @@
             <div class="caption">
                 <div>BOOKSHELF</div>
                 <br/>
-                <div>$20<button class="info-button" onclick="openPopup('More info for bookshelf, very sturdy and looks great in any study')">More Info</button></div>
+                <div>$20<button class="info-button" onclick="openPopup('More info for bookshelf, this is really great quality', function() { addToCart('BOOKSHELF', 20, 'bookshelf.jpeg'); })">More Info</button></div>
             </div>
         </div>
 
@@ -55,10 +53,10 @@
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
             <div id="popup-text"></div>
-            <button class="add-to-cart-button" onclick="addToCart('CHAIR', 20, 'chair.avif')">Add Chair to Cart</button>
-
+            <button id="add-to-cart-button" class="add-to-cart-button">Add to Cart</button>
         </div>
     </div>
+    
     <script>
      
         document.addEventListener("DOMContentLoaded", function() {

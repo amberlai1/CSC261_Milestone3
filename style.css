@@ -42,7 +42,21 @@ display: block;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
     gap: 20px; 
+    align-content: center;
    
+}
+
+.shop-container-left {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
+    gap: 20px; 
+    width: 50%;
+}
+
+.shop-container-right {
+    justify-content: flex-end;
+    align-items: flex-start; 
+    width: 50%;
 }
 .popup {
     display: none;
@@ -54,7 +68,6 @@ display: block;
     background-color: rgba(0, 0, 0, 0.5); 
     z-index: 9999; 
 }
-
 .popup-content {
     position: absolute;
     background-color: #fff;
@@ -86,7 +99,7 @@ display: block;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 94%;
     background-color: rgba(0, 0, 0, 0.7); 
     color: #fff;
     padding: 10px;
@@ -154,4 +167,93 @@ display: block;
     text-align: center;
     border: none;
     outline: none;
+}
+
+
+
+.account-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  
+}
+
+.login-box {
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: RGB(5, 43, 93);
+    color: white;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+}
+
+.login-box input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #e0c31f;
+    color:  RGB(5, 43, 93);
+    text-decoration: solid;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover {
+    background-color: #b09917;
+}
+
+
+.login-type {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-type-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color:  RGB(5, 43, 93);
+    cursor: pointer;
+    outline: none;
+    color: #f0f0f0;
+}
+
+.login-type-btn.active {
+    background-color: white;
+    color:RGB(5, 43, 93)
+}
+
+.login-container {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
 }

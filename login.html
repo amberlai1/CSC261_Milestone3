@@ -4,17 +4,28 @@
 </head>
 <div class="topnav">
     <a class="homelink" href="home.html">
-        <img src = "assets/Screenshot 2024-04-03 at 12.19.07 PM.png" alt = "Home">
+        <img src="assets/Screenshot 2024-04-03 at 12.19.07 PM.png" alt="Home">
     </a>
-    <div class = "left-container">
-        <a href="shop.html" class=" login-link"><i class="fas fa-shopping-cart"></i> </a>
+    <div class="left-container">
+        <a href="shop.html" class="login-link"><i class="fas fa-shopping-cart"></i> </a>
         <a href="login.html" class="login-link">Login</a>
     </div>
-  </div>
-<div class = "body-container">
-    <form action="welcome.php" method="POST">
-    Name: <input type="text" name="name"><br>
-    E-mail: <input type="text" name="email"><br>
-    <input type="submit">
-    </form>
 </div>
+
+<div class="account-box">
+    <div class="login-type">
+        <button id="member-login-btn" class="login-type-btn active" onclick="toggleLoginType('member')">Member Login</button>
+        <button id="business-login-btn" class="login-type-btn" onclick="toggleLoginType('business')">Business Owner Login</button>
+    </div>
+    <div class="login-container">
+        <div class="login-box">
+            <form action="welcome.php" method="POST">
+                Email: <input type="text" name="email"><br>
+                Password: <input type="text" name="password"><br>
+                <input type="submit">
+            </form>
+        </div>
+</div>
+        
+ 
+    
