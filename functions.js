@@ -1,8 +1,3 @@
-// function openPopup(info) {
-//     document.getElementById("popup-text").innerText = info;
-//     document.getElementById("popup").style.display = "block";
-// }
-
 function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
