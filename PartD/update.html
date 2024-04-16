@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class= "link" href="index.html">Back to Home</a>
+
+<div class="forms-container">
+    <form action="updateCustomer.php" method="post">
+        <h3>Update Customers</h3>
+        <label for="customerID">CustomerID:</label>
+        <input type="text" id="customerID" name="customerID">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber">
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName">
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <form action="updateItem.php" method="post">
+        <h3>Update Items</h3>
+        <label for="itemName">Name:</label>
+        <input type="text" id="itemName" name="itemName">
+
+        <label for="itemID">ItemID:</label>
+        <input type="text" id="itemID" name="itemID">
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price">
+
+        <label for="distributorID">DistributorID:</label>
+        <input type="text" id="distributorID" name="distributorID">
+
+        <label for="itemType">Item Type:</label>
+        <input type="text" id="itemType" name="itemType">
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <form action="updateDistributor.php" method="post">
+        <h3>Update Distributor</h3>
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName">
+
+        <label for="distributorID">DistributorID:</label>
+        <input type="text" id="distributorID" name="distributorID">
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <form action="updateTransaction.php" method="post">
+        <h3>Update Transaction</h3>
+        <label for="transactionID">TransactionID:</label>
+        <input type="text" id="transactionID" name="transactionID">
+
+        <label for="customerID">CustomerID:</label>
+        <input type="text" id="customerID" name="customerID">
+
+        <label for="itemID">ItemID:</label>
+        <input type="text" id="itemID" name="itemID">
+
+        <label for="distributorID">DistributorID:</label>
+        <input type="text" id="distributorID" name="distributorID">
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <form action="updateAvailability.php" method="post">
+        <h3>Update Availability</h3>
+        <label for="itemID">ItemID:</label>
+        <input type="text" id="itemID" name="itemID">
+
+        <label for="distributorID">DistributorID:</label>
+        <input type="text" id="distributorID" name="distributorID">
+
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity">
+
+        <label for="availability">Availability:</label>
+        <input type="text" id="availability" name="availability">
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+</div>
+
+
+</body>
+</html>
